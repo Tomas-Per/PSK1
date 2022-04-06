@@ -23,5 +23,10 @@
         <h:commandButton value="Add new Make" actionListener="#{makes.createMakes}" action="index?faces-redirect=true"/>
     </h:form>
 
+    <h:form>
+        <h:inputText value="#{cars.carToCreate.model}" required="true" />
+        <h:inputText value="#{cars.carToCreate.make.id}" required="true" />
+        <h:commandButton value="Add new car" actionListener="#{cars.createCars}" action="index?faces-redirect=true"/>
+    </h:form>
 </h:body>
 </html>
