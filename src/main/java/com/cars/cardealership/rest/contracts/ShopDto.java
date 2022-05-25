@@ -1,19 +1,18 @@
 package com.cars.cardealership.rest.contracts;
 
+
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
 
-@Getter
-@Setter
-public class CarDto {
+ @Getter
+ @Setter
+public class ShopDto {
 
     private Long id;
 
-    private String model;
+    private String name;
 
-    private String make;
-
-    private List<ShopDto> shops;
+    private List<CarDto> cars;
 }

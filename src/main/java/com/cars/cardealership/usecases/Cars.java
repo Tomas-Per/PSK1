@@ -3,7 +3,6 @@ package com.cars.cardealership.usecases;
 import com.cars.cardealership.entities.Car;
 import com.cars.cardealership.entities.Make;
 import com.cars.cardealership.persistence.CarsDAO;
-import com.cars.cardealership.persistence.MakesDAO;
 import lombok.Getter;
 import lombok.Setter;
 

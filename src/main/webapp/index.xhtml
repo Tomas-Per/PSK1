@@ -12,7 +12,9 @@
             <li>#{make.name}
                 <ul>
                     <ui:repeat value="#{make.cars}" var="car">
-                        <li>  #{car.model} </li>
+                        <li>
+                            <h:link value="#{car.model}" outcome="model?carId=#{car.id}" />
+                        </li>
                     </ui:repeat>
                 </ul>
             </li>

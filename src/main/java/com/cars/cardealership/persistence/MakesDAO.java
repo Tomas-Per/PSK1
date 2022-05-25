@@ -25,7 +25,17 @@ public class MakesDAO {
         this.em.persist(make);
     }
 
-    public Make findOne(Integer id) {
+    public Make findOne(Long id) {
         return em.find(Make.class, id);
+    }
+
+    public Make findOneByName(String name) {
+        return (Make) em.createQuery("SELECT m FROM Make m WHERE m.name LIKE :Name")
+                .setParameter("Name", name)
+                .setMaxResults(1).getSingleResult();
+    }
+
+    public Make update(Make make) {
+        return em.merge(make);
     }
 }

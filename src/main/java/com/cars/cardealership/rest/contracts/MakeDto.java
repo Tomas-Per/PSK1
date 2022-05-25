@@ -6,5 +6,9 @@ import lombok.Setter;
 @Getter
 @Setter
 public class MakeDto {
-    private String Make;
+
+    private Long id;
+
+    private String make;
+
 }

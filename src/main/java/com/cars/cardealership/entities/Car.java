@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
@@ -13,7 +14,7 @@ import java.util.List;
 @Table(name = "CAR")
 @Getter
 @Setter
-public class Car {
+public class Car implements Serializable {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -27,7 +28,11 @@ public class Car {
     private Make make;
 
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "cars")
     private List<Shop> shops;
+
+    @Version
+    @Column(name = "OPT_LOCK_VERSION")
+    private Integer version;
 
 }

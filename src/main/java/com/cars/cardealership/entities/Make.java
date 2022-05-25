@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
@@ -13,7 +14,7 @@ import java.util.List;
 @Table(name = "MAKE")
 @Getter
 @Setter
-public class Make {
+public class Make implements Serializable {
 
     public Make(){}
 
@@ -26,5 +27,9 @@ public class Make {
 
     @OneToMany(mappedBy = "make")
     private List<Car> cars;
+
+    @Version
+    @Column(name = "OPT_LOCK_VERSION")
+    private Integer version;
 
 }

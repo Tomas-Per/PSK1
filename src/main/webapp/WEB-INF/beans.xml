@@ -5,5 +5,13 @@
         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd"
         bean-discovery-mode="annotated">
-
+<!--    <alternatives>-->
+<!--        <class>com.cars.cardealership.services.CarModelGeneratorFast</class>-->
+<!--    </alternatives>-->
+    <interceptors>
+        <class>com.cars.cardealership.interceptors.MethodLogger</class>
+    </interceptors>
+    <decorators>
+        <class>com.cars.cardealership.decorators.CapitalizedModelName</class>
+    </decorators>
 </beans>
