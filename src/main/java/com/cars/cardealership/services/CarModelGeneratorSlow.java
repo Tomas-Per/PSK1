@@ -1,10 +1,12 @@
 package com.cars.cardealership.services;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Specializes;
 import java.util.List;
 import java.util.Random;
 
 @Specializes
+@ApplicationScoped
 public class CarModelGeneratorSlow extends CarModelGenerator {
 
     public String generateModel(String make) {
